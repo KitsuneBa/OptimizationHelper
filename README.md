@@ -1,40 +1,42 @@
 # Optimization Helper
 
-Scans avatars for performance bottlenecks and unoptimized assets, helping you create lighter and faster versions with minimal effort.
+A comprehensive Unity editor window that inspects your VRChat avatars and Animator Controllers, calculates an accurate performance score, and provides one-click tools to reduce VRAM usage, clean materials, and locate heavy components.
 
 ---
 
 ## What It Does
 
-Optimization Helper analyzes your avatar hierarchies, components, meshes, and materials directly in Unity. It flags performance issues, calculates estimated VRAM footprint, and assists in generating optimized variants while preserving visual quality.
+Optimization Helper analyzes avatar hierarchies, components, meshes, textures, and animators directly in the Unity Editor. It flags performance bottlenecks, calculates exact GPU VRAM consumption, and provides utilities to optimize assets while preserving visual fidelity.
 
 ### Key Features
 
-* **Avatar Health Analysis:** Detects unoptimized meshes, excessive material slots, and heavy particle systems.
-* **Texture & VRAM Calculator:** Estimates real-time GPU VRAM consumption across avatar textures.
-* **Build Tracker:** Monitors avatar build stages and components during uploads.
-* **One-Click Recommendations:** Clear guidance on where to reduce polygon counts, merge meshes, or compress textures.
-* **Non-Destructive Workflow:** Safely tests optimizations on duplicated avatars before applying changes.
+- **Performance Score & Grade:** Evaluates avatar components and Animator Controllers into a clear performance grade, with independent scoring for meshes and controllers.
+- **PC, Mobile & Suggested Thresholds:** Compares polygons, skinned meshes, material slots, PhysBones, contacts, constraints, lights, and particles against standard VRChat limits and recommended creator targets.
+- **Deep Controller Diagnostics:** Scans Animator Controllers for layers, states, sub-state machines, transitions, AnyState transitions, conditions, and Write Defaults consistency, with a sortable per-layer table to locate slow FX layers.
+- **Texture & Material Optimization:** Batch-compress textures, configure crunch compression, strip unused serialized material properties, and adjust shadow casting and distance fade on lilToon and Poiyomi shaders.
+- **Hierarchy Component Finder:** Search avatar hierarchies by component type (PhysBones, colliders, constraints, renderers, contacts) and sort by polygon or material count.
+- **Exact Mesh & Texture VRAM Footprint:** Calculates GPU memory consumption in megabytes (MB) for every mesh and texture on the avatar.
+- **One-Click Material Backup:** Automatically duplicates materials before bulk adjustments to prevent accidental data loss.
 
 ---
 
 ## Documentation
 
-Full documentation, optimization walkthroughs, and VRAM management guides:  
+Full documentation and usage walkthroughs are available at:  
 [Optimization Helper Documentation](https://kitsuneba.github.io/docs/optimization-helper/)
 
 ---
 
-## How to Add to VCC (VRChat Creator Companion)
+## Installation via VCC or ALCOM
 
-Open the repository listing and click "Add to VCC":  
+Add the repository listing directly to your package manager:  
 https://kitsuneba.github.io/KitsuneBaTools/
 
 Or add it manually:
-1. Open **VRChat Creator Companion**.
-2. Go to **Settings** > **Packages** > **Add Repository**.
+1. Open **VRChat Creator Companion (VCC)** or **ALCOM**.
+2. Go to **Settings -> Packages -> Add Repository**.
 3. Paste the listing URL:
-   ```
+   ```text
    https://kitsuneba.github.io/KitsuneBaTools/index.json
    ```
 4. Click **Add**.
